@@ -4,7 +4,7 @@
 // - protoc             v3.12.4
 // source: customer/customer.proto
 
-package netxd_customer_git
+package netxd_customer_proto
 
 import (
 	context "context"
@@ -35,7 +35,7 @@ func NewCustomerServiceClient(cc grpc.ClientConnInterface) CustomerServiceClient
 
 func (c *customerServiceClient) CreateCustomer(ctx context.Context, in *Customer, opts ...grpc.CallOption) (*CustomerResponse, error) {
 	out := new(CustomerResponse)
-	err := c.cc.Invoke(ctx, "/customer.CustomerService/CreateCustomer", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/netxd_customer_proto.CustomerService/CreateCustomer", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -80,7 +80,7 @@ func _CustomerService_CreateCustomer_Handler(srv interface{}, ctx context.Contex
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/customer.CustomerService/CreateCustomer",
+		FullMethod: "/netxd_customer_proto.CustomerService/CreateCustomer",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CustomerServiceServer).CreateCustomer(ctx, req.(*Customer))
@@ -92,7 +92,7 @@ func _CustomerService_CreateCustomer_Handler(srv interface{}, ctx context.Contex
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var CustomerService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "customer.CustomerService",
+	ServiceName: "netxd_customer_proto.CustomerService",
 	HandlerType: (*CustomerServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

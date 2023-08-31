@@ -1,8 +1,8 @@
 syntax =  "proto3";
 
-option go_package = "github.com/umamaheswari76/netxd_customer_proto.git";
+option go_package = "github.com/umamaheswari76/netxd_customer_proto";
 
-package customer;
+package netxd_customer_proto;
 
 service CustomerService{
     rpc CreateCustomer (Customer) returns (CustomerResponse);
