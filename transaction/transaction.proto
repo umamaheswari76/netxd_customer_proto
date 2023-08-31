@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+option go_package = "github.com/umamaheswari76/netxd_customer_proto";
+
+package netxd_customer_proto;
+
+service TransactionService{
+    rpc Transfer( Transaction) returns (StringMessage);
+}
+
+
+message Transaction{
+    int32 Fromaccount = 1;   
+	int32 Toaccount = 2;   
+	int32 Amount = 3;    
+}
+
+message StringMessage{
+    string Message = 1;
+}

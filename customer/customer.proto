@@ -14,11 +14,12 @@ message Customer{
     string FirstName = 2;
     string SecondName = 3;
     string BankId = 4;
-    int32 Balance =5;
+    int32  Balance =5;
     string CreatedAt = 6;
     string UpdatedAt = 7;
     string IsActive = 8;
 }
+
 message CustomerResponse{
     int32 CustomerId = 1;
     string CreatedAt = 2;
